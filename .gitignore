@@ -1,0 +1,32 @@
+# ===== Maxfiy ma'lumotlar =====
+# Parol, API kalit, token — hech qachon GitHub'ga tushmasin
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+
+# ===== Operatsion tizim fayllari =====
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ===== Muharrir sozlamalari =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== Claude Code lokal sozlamalari =====
+.claude/settings.local.json
+
+# ===== Vaqtinchalik va yaratilgan fayllar =====
+node_modules/
+dist/
+build/
+*.log
+*.tmp
+*.bak
