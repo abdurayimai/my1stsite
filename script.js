@@ -32,19 +32,18 @@ if (tugma) {
 // Agar assets/rasm-hero.jpg fayli topilmasa, rasm o'rniga
 // bosh harflar ("AA") ko'rinib turadi — sayt buzilmaydi.
 
-const photo = document.getElementById('photo');
-
-if (photo) {
-  const hideBrokenPhoto = () => photo.remove();
+// Hero fotosi va "Ishlarim" kartalaridagi rasmlar uchun bir xil qoida.
+document.querySelectorAll('#photo, .work-img').forEach((img) => {
+  const olibTashla = () => img.remove();
 
   // Rasm skript ishga tushishidan oldin ham yuklanib ulgurishi mumkin,
   // shuning uchun ikkala holatni ham tekshiramiz.
-  if (photo.complete && photo.naturalWidth === 0) {
-    hideBrokenPhoto();
+  if (img.complete && img.naturalWidth === 0) {
+    olibTashla();
   } else {
-    photo.addEventListener('error', hideBrokenPhoto);
+    img.addEventListener('error', olibTashla);
   }
-}
+});
 
 /* ---------- Logotiplar ---------- */
 /* HTML da logolar ".png" deb yozilgan. Agar fayl boshqa formatda

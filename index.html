@@ -13,8 +13,8 @@
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<div class="hero-wrap">
+<!-- ============ NAVBAR (sahifa tepasida yopishib turadi) ============ -->
+<div class="nav-bar">
 
   <nav class="nav">
     <a class="nav-logo" href="#">Abdurayim <span class="nav-star">✦</span> <span class="nav-tag">Targetolog</span></a>
@@ -22,7 +22,9 @@
     <div class="nav-links">
       <a href="#about">Men haqimda</a>
       <a href="#services">Xizmatlar</a>
+      <a href="#works">Ishlarim</a>
       <a href="#projects">Loyihalar</a>
+      <a href="#faq">Savol-javob</a>
     </div>
 
     <div class="nav-right">
@@ -34,7 +36,11 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero-wrap">
+
   <header class="hero">
 
     <div class="hero-text">
@@ -154,6 +160,46 @@
 
   <div class="rule"></div>
 
+  <!-- ============ ISHLARIM ============ -->
+  <!-- Rasm topilmasa karta buzilmaydi: script.js buzuq rasmni olib
+       tashlaydi va o'rnida bosh harf ko'rinib turadi. -->
+  <section class="works" id="works">
+    <div class="section-title">Ishlarim</div>
+
+    <div class="works-list">
+
+      <article class="work">
+        <div class="work-photo">
+          <span class="work-fallback" aria-hidden="true">F</span>
+          <img class="work-img" src="assets/rasm1.jpg" alt="Flex Energy" loading="lazy">
+        </div>
+        <h3>Flex Energy</h3>
+        <p>1 oyda Targetga 2 792 $ sarflab, 3 954 ta lid oldik va 419 598 $ lik sotuv qildik.</p>
+      </article>
+
+      <article class="work">
+        <div class="work-photo">
+          <span class="work-fallback" aria-hidden="true">I</span>
+          <img class="work-img" src="assets/rasm7.jpg" alt="Ibtido Ta'lim" loading="lazy">
+        </div>
+        <h3>Ibtido Ta'lim</h3>
+        <p>Targetga 40 kunda 496 $ sarflab 62 ta o'quvchi olib keldik, 53,7 mln so'mlik sotuv bo'ldi.</p>
+      </article>
+
+      <article class="work">
+        <div class="work-photo">
+          <span class="work-fallback" aria-hidden="true">O</span>
+          <img class="work-img" src="assets/rasm9.png" alt="Oxford o'quv markazi" loading="lazy">
+        </div>
+        <h3>Oxford o'quv markazi</h3>
+        <p>Targetga 1 100 $ sarflab 671 ta o'quvchi olib keldik.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
   <!-- ============ LOYIHALARIM (logotiplar lentasi) ============ -->
   <!-- Logolarni assets/ papkasiga rasm1.png ... rasm8.png deb joylang.
        JPG/JPEG/WEBP/SVG saqlasangiz ham ishlaydi — script.js avtomatik topadi.
@@ -188,6 +234,38 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ============ SAVOL-JAVOB ============ -->
+  <!-- <details> — brauzerning o'z akkordeoni, JS kerak emas -->
+  <section class="faq" id="faq">
+    <div class="section-title">Savol-javob</div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Reklama uchun qancha byudjet kerak?</summary>
+        <p>Aniq belgilangan byudjet bo'lmaydi, maqsadingiz va mahsulotingiz narxidan kelib chiqib kunlik minimal 3-5 $ dan boshlanadi.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Natijani qancha vaqtda ko'raman?</summary>
+        <p>Target ishga tushgandan keyin 1 kun ichida lidlar bilan ta'minlab beraman.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Ishingiz qanday bosqichlarda boradi?</summary>
+        <p>Reklama akkaunt ochaman, viza karta ulayman, kreativlar tayyor bo'lsa target reklamani ishga tushiraman.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Hisobotni qanday ko'rinishda olaman?</summary>
+        <p>Hisobotlarni telegram guruhga yoki lichkangizga kunlik, haftalik va oylik shaklda tayyorlab berib boraman.</p>
+      </details>
+
     </div>
   </section>
 
