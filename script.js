@@ -12,9 +12,10 @@ if (tugma) {
     tugma.setAttribute('aria-label', qorongi ? 'Yorug\' mavzuga o\'tish' : 'Qorong\'i mavzuga o\'tish');
     tugma.setAttribute('aria-pressed', String(qorongi));
 
-    // Mobil brauzer paneli rangi ham mavzuga moslashsin
+    // Mobil brauzer paneli rangi ham mavzuga moslashsin.
+    // Sahifa tepasida hero polosasi turadi — shuning uchun uning rangi.
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', qorongi ? '#14100b' : '#faefdf');
+    if (meta) meta.setAttribute('content', qorongi ? '#2b1a11' : '#f5e6cf');
   };
 
   yorliqniYangilash();

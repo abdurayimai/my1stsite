@@ -23,7 +23,9 @@ va'dasiz. Auditoriya — biznes egalari, texnik odamlar emas.
 
 - Ranglar FAQAT `style.css` boshidagi `:root` va `:root[data-theme="dark"]`
   bloklarida. Qoida: CSS ichida qattiq rang yozilmaydi, `var(--...)` ishlatiladi.
-- Iliq qaymoq/oltin palitra. Hero polosasi ikkala mavzuda ham to'q rangda qoladi.
+- Iliq qaymoq/oltin palitra. Hero polosasi va navbar ham mavzu bilan almashadi:
+  yorug'da qaymoq, qorong'ida to'q. Ularning ranglari `--hero-*` va `--nav-*`
+  o'zgaruvchilarida, ikkala `:root` blokida ham yozilgan.
 - Matn kontrasti kamida 4.5 (yirik sarlavhalar uchun 3.0). O'zgartirgach o'lchab ko'r.
 - Mobil (375px) va kompyuter (1280px) — ikkalasida ham tekshir.
 

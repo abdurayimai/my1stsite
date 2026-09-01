@@ -21,18 +21,23 @@
   --shadow-md:        0 6px 18px rgba(90,65,20,.10);
   --shadow-card:      0 8px 30px rgba(90,65,20,.09), 0 1px 3px rgba(90,65,20,.06);
   --shadow-cta:       0 3px 10px rgba(143,93,18,.22);
-  /* Hero doim to'q rangda — mavzudan qat'i nazar */
-  --hero-bg:          #2b1a11;
-  --hero-deep:        #1f120b;
-  --hero-text:        #fdf8f2;
-  --hero-muted:       #c6b2a1;
-  --hero-faint:       #9b8168;
-  --hero-accent:      #b0521a;
-  --hero-accent-hover:#c76421;
-  --hero-star:        #eda63f;
-  --nav-bg:           #fdf7ee;
+  /* Hero polosasi va navbar — yorug' mavzu */
+  --hero-bg:          #f5e6cf;
+  --hero-glow:        #fdf3e2;
+  --hero-deep:        #ecd9bd;
+  --hero-text:        #2e2418;
+  --hero-muted:       #6b5942;
+  --hero-faint:       #776146;
+  --hero-accent:      #9c4c15;
+  --hero-accent-hover:#b4581a;
+  --hero-star:        #a56a09;
+  --hero-on-accent:   #fff8f2;
+  --hero-photo-shadow:0 20px 50px rgba(90,65,20,.22);
+  --hero-cta-glow:    0 10px 24px rgba(156,76,21,.28);
+  --nav-bg:           #fffdfa;
   --nav-text:         #3a2417;
   --nav-muted:        #6b4f3c;
+  --nav-line:         #e0cdb6;
   --shadow-cta-hover: 0 6px 16px rgba(143,93,18,.30);
 }
 
@@ -56,6 +61,23 @@
   --shadow-card:      0 8px 30px rgba(0,0,0,.40), 0 1px 3px rgba(0,0,0,.30);
   --shadow-cta:       0 3px 10px rgba(240,189,118,.18);
   --shadow-cta-hover: 0 6px 16px rgba(240,189,118,.26);
+  /* Hero polosasi va navbar — qorong'i mavzu */
+  --hero-bg:          #2b1a11;
+  --hero-glow:        #3a2416;
+  --hero-deep:        #1f120b;
+  --hero-text:        #fdf8f2;
+  --hero-muted:       #c6b2a1;
+  --hero-faint:       #9b8168;
+  --hero-accent:      #b0521a;
+  --hero-accent-hover:#c76421;
+  --hero-star:        #eda63f;
+  --hero-on-accent:   #fff8f2;
+  --hero-photo-shadow:0 20px 50px rgba(0,0,0,.35);
+  --hero-cta-glow:    0 10px 24px rgba(176,82,26,.34);
+  --nav-bg:           #fdf7ee;
+  --nav-text:         #3a2417;
+  --nav-muted:        #6b4f3c;
+  --nav-line:         #e0cdb6;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -264,7 +286,7 @@ footer {
 
 .hero-wrap {
   background: var(--hero-bg);
-  background-image: radial-gradient(1100px 600px at 78% 20%, #3a2416, transparent 65%);
+  background-image: radial-gradient(1100px 600px at 78% 20%, var(--hero-glow), transparent 65%);
   padding: 14px 20px 110px;
 }
 
@@ -296,7 +318,7 @@ footer {
   display: inline-block;
   margin-left: 4px;
   padding: 3px 12px;
-  border: 1px solid #e0cdb6;
+  border: 1px solid var(--nav-line);
   border-radius: 999px;
   font-size: 12.5px;
   font-weight: 500;
@@ -328,7 +350,7 @@ footer {
 .nav-cta {
   padding: 10px 20px;
   background: var(--hero-accent);
-  color: #fff8f2;
+  color: var(--hero-on-accent);
   font-size: 14.5px;
   font-weight: 600;
   text-decoration: none;
@@ -398,7 +420,7 @@ footer {
   gap: 14px;
   padding: 9px 9px 9px 26px;
   background: var(--hero-accent);
-  color: #fff8f2;
+  color: var(--hero-on-accent);
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
@@ -409,7 +431,7 @@ footer {
 .cta:hover {
   background: var(--hero-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(176,82,26,.34);
+  box-shadow: var(--hero-cta-glow);
 }
 
 .cta:active { transform: translateY(0); }
@@ -420,7 +442,7 @@ footer {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #fff8f2;
+  background: var(--hero-on-accent);
 }
 
 .cta-arrow svg {
@@ -468,7 +490,7 @@ footer {
   background: var(--hero-deep);
   display: grid;
   place-items: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  box-shadow: var(--hero-photo-shadow);
 }
 
 .hero-photo img {
@@ -495,7 +517,7 @@ footer {
   display: grid;
   place-items: center;
   background: transparent;
-  border: 1px solid #e0cdb6;
+  border: 1px solid var(--nav-line);
   border-radius: 50%;
   color: var(--nav-muted);
   cursor: pointer;
