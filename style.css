@@ -629,7 +629,8 @@ footer {
 
 .work-photo {
   position: relative;
-  aspect-ratio: 4 / 3;
+  /* Kvadrat — logotiplar ham kvadrat, shuning uchun kesilmaydi */
+  aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
   background: var(--surface);
@@ -639,14 +640,16 @@ footer {
   margin-bottom: 12px;
 }
 
-/* Rasmlar logotip — shuning uchun kesilmaydi, ichiga sig'diriladi */
+/* Logotip qutini chetdan chetgacha to'ldiradi — xuddi lentadagi kabi,
+   "quti ichida quti" ko'rinmasin. Shaffof logotip (masalan Oxford)
+   ostidan qutining o'z rangi ko'rinib turadi. */
 .work-photo img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 14px;
+  object-fit: cover;
+  padding: 0;
 }
 
 .work-fallback {
@@ -726,7 +729,9 @@ footer {
 
 @media (max-width: 600px) {
   .works-list { grid-template-columns: 1fr; gap: 22px; }
-  .work-photo { aspect-ratio: 16 / 9; }
+  /* Kvadratligicha qoladi (kesilmasin), lekin butun kenglikni
+     egallamasin — aks holda logotip haddan tashqari yirik chiqadi */
+  .work-photo { max-width: 200px; }
 }
 
 /* ============ LOGOTIPLAR LENTASI ============ */
