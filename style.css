@@ -610,8 +610,9 @@ footer {
   .hero-wrap { padding: 30px 20px 90px; }
   .nav-tag { display: none; }
 
-  /* Menyu ikki qatorga bo'linadi — balandroq, zaxira ham kattaroq */
-  section[id] { scroll-margin-top: 130px; }
+  /* Menyu ikki qatorga bo'linadi — balandroq, zaxira ham kattaroq.
+     Menyu balandligi 134px, ustiga bir oz nafas qo'shildi. */
+  section[id] { scroll-margin-top: 146px; }
 
   /* Havolalar yashirilmaydi — ikkinchi qatorga tushadi va
      barmoq bilan yon suriladi (JS kerak emas) */
@@ -627,7 +628,13 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
   .nav-links::-webkit-scrollbar { display: none; }   /* Chrome, Safari */
-  .nav-links a { white-space: nowrap; }
+
+  /* Barmoq bilan tegish maydoni kamida 44px bo'lsin. Matn o'lchami
+     o'zgarmaydi — faqat bosiladigan soha kengayadi. Menyu balandlashib
+     ketmasligi uchun qatorlar orasi qisqartirildi. */
+  .nav-links a { white-space: nowrap; padding: 11px 0; }
+  .nav { row-gap: 2px; }
+  .theme-toggle { width: 44px; height: 44px; }
 
   .hero {
     grid-template-columns: 1fr;
@@ -644,9 +651,12 @@ footer {
 @media (max-width: 480px) {
   .nav-bar { padding: 12px 16px; }
   .hero-wrap { padding: 24px 16px 80px; }
-  .nav { padding: 10px 10px 10px 18px; gap: 12px; }
+  .nav { padding: 4px 10px 4px 18px; gap: 12px; }
   .nav-logo { font-size: 15.5px; }
-  .nav-cta { padding: 9px 16px; font-size: 13.5px; }
+  .nav-cta { padding: 11px 16px; font-size: 13.5px; }   /* 44px tegish maydoni */
+
+  /* Karta ekran chetiga tegib turmasin — yumaloq burchaklari ochilsin */
+  .card { width: auto; margin-left: 12px; margin-right: 12px; }
   .featured-list { gap: 20px; }
   .featured-list span { font-size: 15px; }
   .cta { font-size: 15px; padding-left: 22px; }
