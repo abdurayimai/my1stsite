@@ -39,6 +39,13 @@
   --nav-muted:        #6b4f3c;
   --nav-line:         #e0cdb6;
   --shadow-cta-hover: 0 6px 16px rgba(143,93,18,.30);
+  /* Logotiplar lentasi. Plitka ikkala mavzuda ham OCH qoladi:
+     logotiplar JPG, ya'ni o'z oq foni bilan keladi — to'q plitkada
+     ular oq to'rtburchak bo'lib ajralib qolardi. */
+  --logo-bg:          #fffdf8;
+  --logo-line:        #e9dcc6;
+  --logo-fallback:    #7d6a4f;
+  --logo-shadow:      0 8px 18px rgba(90,65,20,.16);
 }
 
 :root[data-theme="dark"] {
@@ -78,6 +85,12 @@
   --nav-text:         #3a2417;
   --nav-muted:        #6b4f3c;
   --nav-line:         #e0cdb6;
+  /* Plitka och qoladi (yuqoridagi izohga qarang) — faqat ohangi
+     navbar bilan bir xil, soyasi esa to'qroq */
+  --logo-bg:          #fdf7ee;
+  --logo-line:        #e0cdb6;
+  --logo-fallback:    #7d6a4f;
+  --logo-shadow:      0 8px 18px rgba(0,0,0,.45);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -680,22 +693,29 @@ footer {
 
 .faq-item summary:hover { color: var(--heading); }
 
-/* O'z belgimiz: yopiqda "+", ochiqda "-" */
+/* O'z belgimiz: yopiqda "+", ochiqda "-".
+   Belgi shrift harfi bilan emas, ikkita chiziq bilan chiziladi —
+   shunda u doiraning aniq markazida turadi va shrift o'lchamiga
+   bog'liq bo'lmaydi. O'lchamlar butun songa tushadi (chiziq tiniq). */
 .faq-item summary::before {
-  content: "+";
+  content: "";
   flex: none;
   width: 22px;
   height: 22px;
-  display: grid;
-  place-items: center;
   border: 1px solid var(--line);
   border-radius: 50%;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--accent);
+  background-image:
+    linear-gradient(var(--accent), var(--accent)),   /* gorizontal */
+    linear-gradient(var(--accent), var(--accent));   /* vertikal   */
+  background-repeat: no-repeat;
+  background-position: center, center;
+  background-size: 10px 2px, 2px 10px;
 }
 
-.faq-item[open] summary::before { content: "\2212"; }   /* minus belgisi */
+/* Ochiq holatda vertikal chiziq yo'qoladi — "+" dan "-" ga aylanadi */
+.faq-item[open] summary::before {
+  background-size: 10px 2px, 0 0;
+}
 
 .faq-item p {
   padding: 0 0 18px 34px;
@@ -750,8 +770,8 @@ footer {
   height: 116px;
   display: grid;
   place-items: center;
-  background: #fffdf8;
-  border: 1px solid #e9dcc6;
+  background: var(--logo-bg);
+  border: 1px solid var(--logo-line);
   border-radius: 12px;
   overflow: hidden;
   transition: transform .25s, box-shadow .25s;
@@ -759,7 +779,7 @@ footer {
 
 .logo-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(90,65,20,.16);
+  box-shadow: var(--logo-shadow);
 }
 
 .logo-item img {
@@ -774,7 +794,7 @@ footer {
 .logo-fallback {
   font-size: 20px;
   font-weight: 600;
-  color: #c3ab86;
+  color: var(--logo-fallback);
 }
 
 /* Harakat kamaytirilgan rejimda lenta to'xtaydi,

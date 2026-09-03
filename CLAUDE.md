@@ -37,3 +37,5 @@ va'dasiz. Auditoriya — biznes egalari, texnik odamlar emas.
 - `index.html` da `—`, `→`, `·`, `©` belgilari bor. Tahrirdan keyin ular
   buzilmaganini tekshir (perl/iconv UTF-8 ni buzishi mumkin).
 - Parol, API kalit, token yozma — sayt statik, ularga ehtiyoj yo'q.
+- `style.css` yoki `.js` fayl o'zgarsa, `index.html` dagi `?v=N` raqamini
+  oshir. Aks holda brauzer eski nusxani ko'rsatadi va o'zgarish bilinmaydi.
