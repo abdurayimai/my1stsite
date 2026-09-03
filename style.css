@@ -787,8 +787,12 @@ footer {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 16px;
+  /* Logotip plitkani chetdan chetgacha to'ldiradi. Har bir logotip
+     o'z foni bilan keladi (biri qora, biri oq, biri ko'k) — shu fon
+     plitkaning o'zi bo'lib qoladi va "quti ichida quti" ko'rinmaydi.
+     Rasmlar kvadrat, shuning uchun kesilmaydi. */
+  object-fit: cover;
+  padding: 0;
 }
 
 .logo-fallback {
