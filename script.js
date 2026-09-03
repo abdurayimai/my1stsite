@@ -71,3 +71,29 @@ document.querySelectorAll('img.logo').forEach((img) => {
   // Skript ishga tushgunicha yuklanib ulgurgan bo'lishi mumkin
   if (img.complete && img.naturalWidth === 0) keyingisiniSina();
 });
+
+/* ---------- Bo'limlar scroll'da paydo bo'lishi ---------- */
+/* Bo'lim ko'rinish maydoniga kirganda unga "korindi" belgisi qo'yiladi,
+   qolganini CSS bajaradi. Har bir bo'lim BIR MARTA paydo bo'ladi —
+   keyin kuzatuv to'xtatiladi, aks holda har scroll'da takrorlanib
+   charchatardi. */
+
+const bolimlar = document.querySelectorAll('.card section');
+
+if (bolimlar.length) {
+  if ('IntersectionObserver' in window) {
+    const kuzatuvchi = new IntersectionObserver((yozuvlar, kuzat) => {
+      yozuvlar.forEach((yozuv) => {
+        if (!yozuv.isIntersecting) return;
+        yozuv.target.classList.add('korindi');
+        kuzat.unobserve(yozuv.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+    bolimlar.forEach((bolim) => kuzatuvchi.observe(bolim));
+  } else {
+    // Eski brauzer IntersectionObserver'ni bilmaydi — yashirib
+    // qo'ymaymiz, hammasini darrov ko'rsatamiz.
+    bolimlar.forEach((bolim) => bolim.classList.add('korindi'));
+  }
+}
